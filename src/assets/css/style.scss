@@ -1,0 +1,125 @@
+// 1. Your custom variables and variable overwrites.
+$global-link-color: #DA7D02;
+
+// 2. Import default variables and available mixins.
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+@mixin hook-card() { color: #000; }
+
+@import "../node_modules/uikit/src/scss/uikit.scss";
+
+/* Variables */
+
+$h-font: 'Scope One', sans-serif;
+$t-font: 'Lato', sans-serif;
+
+$red-accent: #FA5951;
+
+/* Selectors */
+
+.say-background-primary{
+  background: #fff;
+}
+
+.say-background-secondary{
+  background: #fafafa;
+}
+
+.say-container-medium{
+  max-width: 1360px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $h-font;
+  font-weight: 300;
+  margin: 0;
+  &.responsive{
+    font-size: 32px;
+  }
+  &.accent-primary{
+    color: #333;
+  }
+  &.accent-secondary{
+    color: #9ea0a6;
+  }
+}
+
+p{
+  font-family: $t-font;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+  line-height: 30px;
+}
+
+a{
+  font-family: $t-font;
+  text-decoration: none;
+  &.style-a{
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &.uk-button-text{
+    text-transform: none;
+  }
+}
+
+#mainnav{
+  .uk-navbar-nav > li > a{
+    font-family: $t-font;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .link-both-container{
+    background: $red-accent;
+    padding: 0 30px;
+    line-height: 38px;
+    border-radius: 200px;
+    a{
+      color: #fff;
+      text-transform: capitalize;
+      font-size: 16px;
+    }
+    span{
+      color: #fff;
+    }
+  }
+
+}
+
+.header{
+  min-height: 100vh;
+  .container{
+    padding-top: 100px;
+  }
+  .inherit-height{
+    min-height: 100vh;
+  }
+}
+
+
+.service-a{
+  background-image: url('./assets/components/service_a.jpeg');
+}
+
+@media (min-width: 600px){
+  h1,h2,h3,h4,h5,h6{
+    &.responsive{
+      font-size: calc(.02273*100vw + 10.72727px);
+    }
+  }
+}
+
+@media (min-width: 960px){
+  .header{
+    margin-top: -80px;
+  }
+}
