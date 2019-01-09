@@ -2,20 +2,20 @@
 <div>
   <Header></Header>
 
-  <section class="uk-section" v-if="errored">
+  <!--<section class="uk-section" v-if="errored">
       <div class="uk-container tm-container-medium">
         <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
       </div>
-    </section>
+    </section>-->
 
-  <div v-else class="uk-section">
+  <!--<div v-else class="uk-section">
     <div class="uk-container say-container-medium">
         <div v-if="loading">Cargando...</div>
         <div>{{ info }}</div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="uk-section">
+  <!--<div class="uk-section">
     <div class="uk-container say-container-medium">
       <h3>Agregar Nuevo Proyecto</h3>
       <form  method="post" @submit.prevent="postNow">
@@ -24,10 +24,6 @@
         <input type="text" name="name" id="name" v-model="title">
       </p>
 
-      <!--<p>
-        <label for="description">Description: {{description}}</label>
-        <input type="text" name="description" id="description" v-model="description">
-      </p>-->
 
       <p>
         <input type="submit" value="Submit">
@@ -35,11 +31,16 @@
     </form>
     <div v-if="issaved">Guardado Satisfactoriamente</div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="uk-section">
+  <div class="uk-section" id="selectedprojects">
 
     <div class="uk-container say-container-medium">
+
+      <div class="uk-section">
+        <p>Proyectos</p>
+        <h1>Selectos</h1>
+      </div>
 
       <div class="uk-child-width-1-2@s uk-flex uk-flex-middle" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: > div > div; delay: 300;">
 
@@ -62,44 +63,158 @@
      <div class="almost-middle-container">
        <h1 class="responsive-small">Tú Lo Imaginas</h1>
        <h1 class="responsive-small accent-secondary">Nosotros Lo Creamos</h1>
-       <p class="uk-width-large@s uk-margin">
-         Somos una agencia digital dedicada al diseño de productos digitales pensada en innovar el mercado chileno.
-       </p>
+       <div>
+         <p class="uk-width-large@s uk-margin-small-top uk-margin-small-bottom">Somos una agencia digital dedicada al diseño de productos digitales pensada en innovar el mercado chileno, conformada por un equipo joven creativo que se encarga de brindar la máxima experiencia en cuanto a productos digitales y físicos.
+         </p>
+        <router-link  class="uk-button uk-button-large uk-button-text style-b uk-visible@s" to="/team">Conócenos Más</router-link>
+       </div>
      </div>
 
    </div>
   </div>
 
-  <div class="uk-section">
+  <div class="say-background-secondary">
+
+   <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500;" uk-grid>
+     <div>
+       <div >
+         <div class="say-padding-left-container">
+           <div class="uk-section">
+             <div class="uk-container">
+               <p class="header-text">Últimos Proyectos</p>
+               <h1 class="responsive-small">Federación Chilena de</h1>
+               <h1 class="responsive-small accent-secondary">Taekwondo Tradicional</h1>
+               <p class="uk-margin-top">Trabajo realizado para la Federación Chilena de Taekwondo Tradicional, se realizó producción de estampado de poleras para un evento deportivo. Se utilizó la técnica de <b>serigrafía</b> para un estampado duradero y de calidad. </p>
+               <div class="uk-margin">
+                 <ul class="uk-list">
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Estampado de Poleras Publicitarias</p></li>
+                 </ul>
+               </div>
+               <a class="uk-button uk-button-large uk-button-text style-b uk-visible@s uk-margin-top uk-disabled" href="">Ver Proyecto</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div>
+       <div>
+         <img class="uk-width-1-1" src="/assets/components/projects/highlight/side-a.png" alt="">
+       </div>
+     </div>
+   </div>
+
+  </div>
+
+  <div class="say-background-gradient-art">
+
+   <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500; "  uk-grid>
+     <div>
+       <div >
+         <div class="">
+           <div class="uk-section">
+             <div class="uk-container">
+               <div class="uk-width-xlarge">
+                 <p class="header-text">Últimos Proyectos</p>
+                 <h1 class="responsive-small">Arte Impreso</h1>
+                 <!--<h1 class="responsive-small accent-secondary">Impreso</h1>-->
+                 <p class="uk-margin-top">Arte Impreso en una empresa enfocada en la venta de artículos publicitarios a gran escala tales como gigantografías, POP, pendones, etc. Trabajamos en su imagen digital y en la fotografía de sus productos para la plataforma web.</p>
+                 <div class="uk-margin">
+                   <ul class="uk-list">
+                     <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Fotografía de Productos</p></li>
+                     <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Diseño UX | UI</p></li>
+                     <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Desarrollo e Implementación E-commerce</p></li>
+                   </ul>
+                 </div>
+                 <a class="uk-button uk-button-large uk-button-text style-b uk-visible@s uk-margin-top uk-disabled" href="">Ver Proyecto</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="uk-flex-first@m">
+       <div>
+         <img class="uk-width-1-1" src="/assets/components/projects/highlight/side-b.png" alt="">
+       </div>
+     </div>
+   </div>
+
+  </div>
+
+  <div class="say-background-digital">
+
+   <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500; "  uk-grid>
+     <div>
+       <div >
+         <div class="say-padding-left-container">
+           <div class="uk-section">
+             <div class="uk-container">
+               <p class="header-text">Últimos Proyectos</p>
+               <h1 class="responsive-small">Asesorías CGV</h1>
+               <h1 class="responsive-small accent-secondary">Estudio Contable</h1>
+               <p class="uk-margin-top">CGV SPA es una empresa chilena enfocada al rubro de la contabilidad en sus diversos aspectos. Se trabajó conjuntamente para crear e implementar su diseño corporativo, sitio web, tarjetas de presentación, etc.</p>
+               <div class="uk-margin">
+                 <ul class="uk-list">
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Branding | Identidad Corporativa</p></li>
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Diseño UX | UI</p></li>
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Desarrollo Plataforma Web</p></li>
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Papelería</p></li>
+                   <li><p><span class="uk-margin-small-right" uk-icon="icon: check"></span> Fotografía Corporativa</p></li>
+                 </ul>
+               </div>
+               <a class="uk-button uk-button-large uk-button-text style-b uk-visible@s uk-margin-top uk-disabled" href="">Ver Proyecto</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div>
+       <div>
+         <img class="uk-width-1-1" src="/assets/components/projects/highlight/side-c.jpeg" alt="">
+       </div>
+     </div>
+   </div>
+
+  </div>
+
+  <div class="uk-section uk-section-large">
     <div class="uk-container say-container-medium">
-      <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1 " uk-grid>
-        <div>
-          <div>
-            <h2>Imagina</h2>
-            <p class="uk-margin">Lorem ipsum convallis morbi facilisis curabitur nisl gravida dolor posuere, nibh gravida lectus magna metus nec adipiscing nullam donec, aliquam praesent est consectetur gravida nam ante elementum class porta elit nibh vehicula convallis nisi curabitur</p>
-            <a href="" class="uk-button uk-button-large style-a">Let's go</a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h2>Expresa</h2>
-            <p class="uk-margin">Donec dui taciti euismod leo volutpat enim erat etiam et maecenas consequat risus volutpat ultrices, quis accumsan gravida risus vestibulum turpis dapibus elementum vestibulum lorem vulputate viverra lectus duis mattis tristique curabitur taciti et.</p>
-            <a href="" class="uk-button uk-button-large style-a">Let's go</a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h2>Crea</h2>
-            <p class="uk-margin">Id litora sapien nisl ipsum taciti rutrum justo, aliquam curabitur cubilia fusce convallis quis, ornare lectus commodo taciti bibendum convallis sodales ipsum porta rhoncus lacinia ipsum aptent sodales platea.</p>
-            <a href="" class="uk-button uk-button-large style-a">Let's go</a>
-          </div>
-        </div>
-      </div>
+
+       <h1 class="responsive-small uk-text-center">¿Cuáles son nuestros principios?</h1>
+
+       <div class="uk-section">
+         <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-text-center uk-child-width-1-1 " uk-grid>
+           <div>
+             <div>
+               <img src="/assets/components/others/imagine.jpeg" alt="">
+               <h3 class="uk-margin">Imagina</h3>
+               <p class="uk-margin">Pensamos e idealizamos el diseño de nuestros productos ya sean digitales o físicos pensando en innovar su imagen.</p>
+             </div>
+           </div>
+           <div>
+             <div>
+               <img src="/assets/components/others/design.jpeg" alt="">
+               <h3 class="uk-margin">Expresa</h3>
+               <p class="uk-margin">Nos importa expresar tu identidad corporativa frente a tus clientes y público en general sin perder ese toque que te hizo genial.</p>
+             </div>
+           </div>
+           <div>
+             <div>
+               <img src="/assets/components/others/create.jpeg" alt="">
+               <h3 class="uk-margin">Crea</h3>
+               <p class="uk-margin">Nos encargamos de crear el producto a través de todo el proceso que este conlleve y así también ustedes puedan ser parte de este.</p>
+             </div>
+           </div>
+         </div>
+       </div>
+
     </div>
   </div>
 
 
-<Digital></Digital>
+
+
+<!--<Digital></Digital>
 <PhotoMarketing></PhotoMarketing>
 <Physical></Physical>
 
@@ -139,9 +254,8 @@
   <div id="animation" ref="animation"></div>
 </div>
 
-</div>
+</div>-->
 
-<div id="pageloader" ref="pageloader"></div>
 
 </div>
 </template>
@@ -153,6 +267,7 @@ import Team from '@/components/home/Team.vue'
 import Physical from '@/components/home/Physical.vue'
 import Digital from '@/components/home/Digital.vue'
 import PhotoMarketing from '@/components/home/PhotoMarketing.vue'
+import Footer from '@/components/Footer.vue'
 import Item from '@/components/Item.vue'
 import {TweenMax, Power4, TimelineLite} from "gsap/TweenMax"
 import axios from 'axios'
@@ -167,7 +282,8 @@ export default {
     Physical,
     Digital,
     PhotoMarketing,
-    Item
+    Item,
+    Footer
   },
   data (){
     return{
@@ -205,16 +321,28 @@ export default {
           src: "/assets/components/projects/highlight/afe.mp4",
         },{
           id: 5,
-          title: "Poleras Corporativas",
+          title: "Retratos",
           type: 'image',
-          category: "Artículos Corporativos",
-          src: "/assets/components/projects/highlight/shirts.png",
+          category: "Fotografía Profesional",
+          src: "/assets/components/projects/highlight/c.png",
         },{
           id: 6,
           title: "Asesorías CGV",
           type: 'image',
           category: "Branding, Diseño Web",
           src: "/assets/components/projects/highlight/asesoriascgv.png",
+        },{
+          id: 7,
+          title: "Federación Chilena de Taekwondo",
+          type: 'image',
+          category: "Estampado de Poleras",
+          src: "/assets/components/projects/highlight/shirts.png",
+        },{
+          id: 8,
+          title: "Snog",
+          type: 'image',
+          category: "LookBook",
+          src: "/assets/components/projects/highlight/b.png",
         }
       ]
     }
@@ -240,12 +368,7 @@ export default {
 
       })
 
-      this.timeline.fromTo(
-        pageloader,
-        2,
-        {scaleY: 1},
-        {scaleY: 0, ease: Power4.easeInOut}
-      )
+
 
       this.timeline.fromTo(
         animation ,

@@ -13,7 +13,7 @@
 /* Variables */
 
 $h-font: 'Merriweather', serif;
-$t-font: 'Source Sans Pro', sans-serif;
+$t-font: 'Merriweather Sans', sans-serif;
 
 $red-accent: #FA5951;
 $orange-accent: #FC831E;
@@ -26,10 +26,27 @@ html, body{
 
 @mixin regular_text{
   font-family: $t-font;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   margin: 0;
   line-height: 30px;
+}
+
+b{
+  font-weight: 400;
+  color: $red-accent;
+}
+
+.say-container{
+  background: $red-accent;
+}
+
+.header{
+  margin-top: -80px;
+}
+
+.min-viewport{
+  min-height: 100vh;
 }
 
 .say-background-primary{
@@ -46,6 +63,18 @@ html, body{
 
 .say-container-medium{
   max-width: 1360px;
+}
+
+.say-background-gradient-art{
+  background: linear-gradient(to top, #cbcfda, #d8dbe4);
+}
+
+.say-background-digital{
+  background-color: #EDEDED;
+}
+
+.say-padding-left-container{
+  padding-left: calc((100vw - 1360px)/2);
 }
 
 .almost-middle-container{
@@ -83,6 +112,12 @@ ul.uk-list{
   border-radius: 5px;
 }
 
+.header-text{
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
 h1,h2,h3,h4,h5,h6{
   font-family: $h-font;
   font-weight: 300;
@@ -115,6 +150,7 @@ a{
   font-family: $t-font!important;
   text-decoration: none;
   line-height: 20px;
+  text-transform: none;
   &.style-a{
     color: #fff;
     background: $red-accent;
@@ -131,6 +167,23 @@ a{
     font-size: 16px;
     font-family: $t-font!important;
   }
+  &.style-c{
+    color: #fff;
+    text-transform: none;
+    &:hover{
+      color: #fff;
+    }
+  }
+  &.style-d{
+    color: $red-accent;
+    text-transform: none;
+    background: #ffff;
+    border-radius: 100px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.05);
+    &:hover{
+
+    }
+  }
 }
 
 #mainnav{
@@ -139,6 +192,7 @@ a{
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 300;
+    color: #666;
   }
 
   .link-both-container{
@@ -152,7 +206,7 @@ a{
       font-size: 16px;
     }
     span{
-      color: #fff;
+      color: $red-accent;
     }
   }
 
@@ -172,6 +226,17 @@ a{
     z-index: 999;
   &.active{
      animation: flipOverlay 1800ms;
+  }
+}
+
+.rotated-text{
+  transform: rotate(270deg);
+  margin-right: -80px;
+  p{
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
   }
 }
 
